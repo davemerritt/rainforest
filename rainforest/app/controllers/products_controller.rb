@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def show
- 	@Product = Product.find(params[:id])
+ 	  @product = Product.find(params[:id])
   end
 
   def new
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   	@product = Product.find(params[:id])
 
   	if @product.update_attributes(product_params)
-  		redirect_to product_path(@product)
+  		redirect_to "/product/#{@product.id}"
   	else 
   		render :edit
   	end
