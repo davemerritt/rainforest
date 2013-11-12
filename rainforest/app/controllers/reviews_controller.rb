@@ -1,4 +1,5 @@
 class ReviewsController < ApplicationController
+	before_filter :ensure_logged_in, :only => [:show]
 	before_filter :load_product
 
   def show
