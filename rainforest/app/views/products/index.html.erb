@@ -7,6 +7,6 @@
 		<br>
 		<br>
 		<%= product.description %>
-		<%= product.price_in_cents %>
+		<%= number_to_currency(product.formatted_price) %>
 	</p>
 <% end %>
