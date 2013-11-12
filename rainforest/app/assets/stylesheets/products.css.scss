@@ -1,3 +1,52 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$main-color: #D8E5FF;
+$link-color: #46597F;
+$text-color: darken(#6C727F, 10%);
+
+
+body {
+	font-family: courier;
+	background-color: $main-color;
+}
+
+h1 {
+	color: $text-color;
+}
+
+h2 {
+	color: $text-color;
+}
+
+h3 {
+	color: $text-color;
+}
+
+h4 {
+	color: $text-color;
+}
+
+a {
+	text-decoration: none;
+	color: $link-color;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: lighten( $link-color, 15%);
+}
+
+a:visited {
+	color: lighten($link-color, 15%);
+}
+
+.userinfo {
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	bottom: 0;
+	padding: 5px;
+	clear: both;
+}
