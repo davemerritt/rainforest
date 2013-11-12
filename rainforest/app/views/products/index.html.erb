@@ -1,6 +1,5 @@
 <h1>Products</h1>
 
-<%= link_to 'Add a Product', 'products/new' %> 
 
 <% @products.each do |product| %>
 	<p>	<%= link_to product.name, product %>
@@ -10,3 +9,11 @@
 		<%= number_to_currency(product.formatted_price) %>
 	</p>
 <% end %>
+
+<br>
+<br>
+
+<%= link_to 'Add a Product', 'products/new' %> 
+<br>
+<br>
+<%= link_to 'Create an Account', 'users/new' %>
