@@ -1,23 +1,28 @@
 class ProductsController < ApplicationController
-  def index
-  	@products = Product.all
-  end
-
-  def show
-  	@product = Product.find(params[:id])
-
-    if current_user
-      @review = @product.reviews.build
+    def index
+  	  @products = Product.order('products.created_at DESC').page(params[:page])
+      
+      respond_to do |format|
+        format.js
+        format.html
+      end
     end
-  end
 
-  def new
-  	@product = Product.new
-  end
+    def show
+  	  @product = Product.find(params[:id])
 
-  def edit
-  	@product = Product.find(params[:id])
-  end
+      if current_user
+        @review = @product.reviews.build
+      end
+    end
+
+    def new
+  	  @product = Product.new
+    end
+
+    def edit
+    	@product = Product.find(params[:id])
+    end
 
   	def create
   		@product = Product.new(product_params)

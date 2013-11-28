@@ -1,17 +1,17 @@
 <h1>Products</h1>
+<h2><%= page_entries_info @products %></h2>
 
+<hr/>
 
-<% @products.each do |product| %>
-	<p>	<%= link_to product.name, product %>
-		<br>
-		<br>
-		<%= product.description %>
-		<%= number_to_currency(product.formatted_price) %>
-	</p>
-<% end %>
+<div id="products">
+	<%= render @products %>
+</div>
 
-<br>
-<br>
+<hr/>
+
+<%= paginate @products %>
+
+<hr/>
 
 <%= link_to 'Add a Product', 'products/new' %> 
 <br>
